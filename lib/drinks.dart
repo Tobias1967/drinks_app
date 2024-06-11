@@ -101,7 +101,9 @@ class _DrinkSelectionScreenState extends State<DrinkSelectionScreen> {
           ),
           if (filteredDrinks.isNotEmpty)
             DropdownButton<dynamic>(
-              iconSize: 50,
+              iconSize: 30,
+              focusColor: const Color.fromARGB(113, 72, 146, 243),
+              dropdownColor: Colors.greenAccent,
               value: selectedDrink,
               onChanged: (dynamic newValue) {
                 setState(() {
@@ -118,10 +120,11 @@ class _DrinkSelectionScreenState extends State<DrinkSelectionScreen> {
             ),
           if (selectedDrink != null)
             ListTile(
+              selectedTileColor: Colors.red,
               leading: Image.network(
                 selectedDrink['strDrinkThumb'],
                 width: 200,
-                height: 30,
+                height: 100,
               ),
               title: Text(selectedDrink['strDrink']),
               onTap: () {
@@ -154,6 +157,7 @@ class _DrinkDetailScreenState extends State<DrinkDetailScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: const Color.fromARGB(166, 243, 187, 33),
         title: Text(widget.drink['strDrink']),
       ),
       body: Padding(
